@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+{% include "navbar.html" %}
 <body>
 <h1>{{question.question_text}}</h1>
 <ul>
@@ -11,6 +12,6 @@
     <li>{{choice.choice_text}} -- {{choice.votes}} vote{{choice.votes|pluralize}}</li>
     {% endfor %}
 </ul>
-<a href="{% url 'polls:detail' question.id %}">Vote again?</a>
+<a href="{% url 'polls:detail' question.id %}">Vote again?</a><p></p><a href="{% url 'polls:index' %}">VoteList</a>
 </body>
 </html>
